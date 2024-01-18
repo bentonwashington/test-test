@@ -1,0 +1,30 @@
+function breakingRecords(scores) {
+    // Write your code here
+    
+    //initialize variables to keep track of min and max score
+    var minScore = scores[0];
+    var maxScore = scores[0];
+    var minPtsBroken = 0;
+    var maxPtsBroken = 0;
+    var answerArr = [];
+    
+    //cycle through each score, keep track of how many times each min and max is broken, be sure to update the new min and max if there is a change
+    for (var score of scores) {
+        if (score > maxScore) {
+            maxPtsBroken += 1;
+            maxScore = score;
+        } else if (score < minScore) {
+            minPtsBroken += 1;
+            minScore = score;
+        } else {
+            continue
+        }
+    }
+
+    //pop numbers into array
+    answerArr.push(maxPtsBroken);
+    answerArr.push(minPtsBroken);
+    return answerArr;
+    
+    //BUILT BY THE FATHER, SAVED BY THE SON, AND FILLED WITH THE HOLY SPIRIT
+}
